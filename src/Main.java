@@ -4,17 +4,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int a = in.nextInt();
-        int b = in.nextInt();
-        int c = in.nextInt();
-        int count = 0;
-        if (a % 2 == 0) count++;
-        if (b % 2 == 0) count++;
-        if (c % 2 == 0) count++;
-        if (count >= 2)
-            System.out.print("true");
+        double x = in.nextDouble();
+        double y = in.nextDouble();
+        if ((x*x + y*y > 4) && (x < 2) && (y < x) && (y > 0) && (x > 0))
+            System.out.print("YES");
         else
-            System.out.print("false");
-
+            System.out.print("NO");
     }
 }
