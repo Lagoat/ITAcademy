@@ -5,25 +5,17 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int a = in.nextInt();
-        int b = in.nextInt();
-        int c = in.nextInt();
-        if (a > b && a > c){
-            if (b > c)
-                System.out.print(c + " " + b + " " + a);
-            else
-                System.out.print(b + " " + c + " " + a);
+        int mod = a % 100;
+        if (mod / 10 == 1){
+            System.out.print(a + " " + "TOPTOB");
         }
-        else if (b > a && b > c){
-            if (a > c)
-                System.out.print(c + " " + a + " " + b);
+        else {
+            if (mod % 10 == 1)
+                System.out.print(a + " " + "TOPT");
+            else if (mod % 10 >= 2 && mod % 10 <= 4)
+                System.out.println(a + " " + "TOPTA");
             else
-                System.out.print(a + " " + c + " " + b);
-        }
-        else{
-            if (a > b)
-                System.out.print(b + " " + a + " " + c);
-            else
-                System.out.print(a + " " + b + " " + c);
+                System.out.println(a + " " + "TOPTOB");
         }
     }
 }
