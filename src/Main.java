@@ -4,12 +4,26 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        double x = in.nextDouble();
-        if (x >= 0 && x <= 9)
-            System.out.print("DIGIT");
-        else if (x >= 10 && x <= 99)
-            System.out.println("NUM");
-        else
-            System.out.println("OTHER");
+        int a = in.nextInt();
+        int b = in.nextInt();
+        int c = in.nextInt();
+        if (a > b && a > c){
+            if (b > c)
+                System.out.print(c + " " + b + " " + a);
+            else
+                System.out.print(b + " " + c + " " + a);
+        }
+        else if (b > a && b > c){
+            if (a > c)
+                System.out.print(c + " " + a + " " + b);
+            else
+                System.out.print(a + " " + c + " " + b);
+        }
+        else{
+            if (a > b)
+                System.out.print(b + " " + a + " " + c);
+            else
+                System.out.print(a + " " + b + " " + c);
+        }
     }
 }
