@@ -6,7 +6,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
         double x = in.nextDouble();
         double y = in.nextDouble();
-        if ((x * x + y * y < 1) && (y != x) && (x < 0) || (x * x + y * y < 1) && (y > x) && (x > 0) && (y > 0))
+        if ((x*x + y*y < 1) && ((y > -x) || (y < x)))
             System.out.print("YES");
         else
             System.out.print("NO");
