@@ -6,7 +6,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
         double x = in.nextDouble();
         double y = in.nextDouble();
-        if ((x*x + y*y > 4) && (x < 2) && (y < x) && (y > 0) && (x > 0))
+        if ((y > 0) && (x > 0) && (y < 0.5) && (y < Math.sin(x)) && (x < Math.PI))
             System.out.print("YES");
         else
             System.out.print("NO");
