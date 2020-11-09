@@ -7,14 +7,14 @@ public class Main {
         int a = in.nextInt();
         int b = in.nextInt();
         int c = in.nextInt();
-        int d = in.nextInt();
-        if ((a == -b) || (a == -c) || (a == -d)) {
+        int count = 0;
+        if (a % 2 == 0) count++;
+        if (b % 2 == 0) count++;
+        if (c % 2 == 0) count++;
+        if (count >= 2)
             System.out.print("true");
-        } else if ((b == -c) || (b == -d)) {
-            System.out.print("true");
-        } else if (c == -d) {
-            System.out.print("true");
-        } else
+        else
             System.out.print("false");
+
     }
 }
