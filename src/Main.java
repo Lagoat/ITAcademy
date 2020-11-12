@@ -4,26 +4,20 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int N = in.nextInt();
-        int prime;
-        if (N % 2 == 0)
-            prime = N + 1;
-        else
-            prime = N;
-        int check = 0;
-
-        while (check != 1){
-            prime += 2;
-            int i = 2;
-            int amnt = 0;
-            while (i != prime) {
-                if (prime % i == 0)
-                    amnt++;
-                i++;
-            }
-            if (amnt == 0)
-                check = 1;
-        }
-        System.out.print(prime);
+        int n = in.nextInt();
+        int ans = 0;
+        int[] a = new int[n];
+        for (int i = 0; i < n; i++)
+            a[i] = in.nextInt();
+         int X = in.nextInt();
+         for (int i = 0; i < n; i++)
+             if (a[i] == X){
+                 ans = i + 1;
+                 break;
+             }
+         if (ans == 0)
+             System.out.print("NO");
+         else
+             System.out.print(ans);
     }
 }
