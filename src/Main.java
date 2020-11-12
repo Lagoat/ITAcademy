@@ -4,14 +4,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int x = in.nextInt();
-        int sum = 0;
-        while (x >= 10 && x <= 99)
-        {
-            if (x >= 10 && x <= 99)
-                sum += (x % 10) + x / 10;
-            x = in.nextInt();
+        int A = in.nextInt();
+        int B = in.nextInt();
+        int chast = 0;
+        while (A >= B) {
+            A -= B;
+            chast++;
         }
-        System.out.print(sum);
+        System.out.print(chast + " " + A);
     }
 }
