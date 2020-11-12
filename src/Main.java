@@ -4,12 +4,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int A = in.nextInt();
-        int dig = 0;
-        while (A > 0) {
-            dig++;
-            A /= 2;
+        int N = in.nextInt();
+        int n = 26;
+        int sum = 0;
+        while (n <= N) {
+            sum += n;
+            n += 2;
         }
-        System.out.print(dig);
+        System.out.print(sum);
     }
 }
