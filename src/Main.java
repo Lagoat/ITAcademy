@@ -4,28 +4,18 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        double A = in.nextDouble();
-        double B = in.nextDouble();
-        double x1 = B / A, x2 = -B / A;
-
-        if (A == 0)
-            System.out.print("no such x");
-        else if (A > 0) {
-            if (x1 > -B && x2 > -B)
-                System.out.print("any x");
-            else if (x1 > x2)
-                System.out.print("x<" + x2 + " or x>" + x1);
+        int n = in.nextInt();
+        if (n >= 1 && n <= 12)
+        {
+            if (n == 2)
+                System.out.print(28);
+            else if (n == 1 || n == 3 || n == 5 || n == 7 || n == 8 || n == 10 || n == 12)
+                System.out.print(31);
             else
-                System.out.print("x<" + x1 + " or x>" + x2);
+                System.out.print(30);
         }
-        else {
-            if (x1 < -B && x2 < -B)
-                System.out.print("any x");
-            else if (x1 > x2)
-                System.out.print(x2 + "<x<" + x1);
-            else
-                System.out.print(x1 + "<x<" + x2);
-        }
+        else
+            System.out.println(0);
 
     }
 }
