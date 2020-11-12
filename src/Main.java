@@ -6,13 +6,11 @@ public class Main {
         Scanner in = new Scanner(System.in);
         int x = in.nextInt();
         int sum = 0;
-        if (x > 10)
-            sum += x;
-        while (x % 5 != 0)
+        while (x >= 10 && x <= 99)
         {
+            if (x >= 10 && x <= 99)
+                sum += (x % 10) + x / 10;
             x = in.nextInt();
-            if (x > 10)
-                sum += x;
         }
         System.out.print(sum);
     }
