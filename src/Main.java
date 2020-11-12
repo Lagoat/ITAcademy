@@ -5,12 +5,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int N = in.nextInt();
-        int n = 26;
-        int sum = 0;
-        while (n <= N) {
-            sum += n;
-            n += 2;
+        int amnt = 0;
+        while (N > 0) {
+            amnt++;
+            N /= 10;
         }
-        System.out.print(sum);
+        System.out.print(amnt);
     }
 }
