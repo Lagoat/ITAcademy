@@ -5,19 +5,12 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int N = in.nextInt();
-        int dig = 0;
+        int dig = 10;
         while (N > 0) {
-            if ((N % 10) % 2 != 0)
-            {
+            if (N % 10 < dig && N % 10 != 0)
                 dig = N % 10;
-                break;
-            }
             N /= 10;
         }
-        if (dig == 0)
-            System.out.print("NO");
-
-        else
             System.out.print(dig);
     }
 }
