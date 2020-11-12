@@ -4,25 +4,12 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int a = in.nextInt();
-        int b = in.nextInt();
-        int c = in.nextInt();
-        if (a >= b && a >= c) {
-            if (b > c)
-                System.out.print(c + " " + b + " " + a);
-            else
-                System.out.print(b + " " + c + " " + a);
+        int x = in.nextInt();
+        int c = 1;
+        while (x >= 0) {
+            c++;
+            x = in.nextInt();
         }
-        else if (b >= a && b >= c) {
-            if (a > c)
-                System.out.print(c + " " + a + " " + b);
-            else
-                System.out.print(a + " " + c + " " + b);
-        }
-        else
-            if (a > b)
-                System.out.print(b + " " + a + " " + c);
-            else
-                System.out.print(a + " " + b + " " + c);
+        System.out.print(c);
     }
 }
