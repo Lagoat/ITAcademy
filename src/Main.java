@@ -4,19 +4,20 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Main {
-    public static int sum(int ans) {
-        int n = 14;
-        ans = 0;
-        while (n < 100) {
-            ans += n / 10 + n % 10;
-            n += 7;
+    public static int amount(int n) {
+        int i = 100;
+        int amnt = 0;
+        while (i < n) {
+            if ((i % 10 + i / 100 + i / 10 % 10) % 13 == 0)
+                amnt++;
+            i++;
         }
-        return ans;
+        return amnt;
     }
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int ans = 0;
-        System.out.print(sum(ans));
+        int n = in.nextInt();
+        System.out.print(amount(n));
     }
 }
