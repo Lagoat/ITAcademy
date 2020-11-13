@@ -4,21 +4,29 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Main {
-    public static String bin(double x, int n) {
-        String ans = "";
-        for (int i = 0; i < n; i++) {
-            x *= 2;
-            ans += (int)x;
-            if ((int)x == 1)
-                x -= 1;
+    public static void aver(int[] a)
+    {
+        Scanner in = new Scanner(System.in);
+        int amnt = 0; int sum = 0;
+        for(int i = 0; i < a.length; i++)
+        {
+            if (a[i] >= 1000 && a[i] <= 9999) {
+                sum += a[i];
+                amnt++;
+            }
         }
-        return ans;
+        if (amnt == 0)
+            System.out.print(-1.00);
+        else
+            System.out.print(sum/amnt);
     }
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        double x = in.nextDouble();
         int n = in.nextInt();
-        System.out.print(bin(x, n));
+        int[] a = new int [n];
+        for (int i = 0; i < n; i++)
+            a[i] = in.nextInt();
+        aver(a);
     }
 }
