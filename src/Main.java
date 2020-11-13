@@ -4,20 +4,18 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int a = in.nextInt();
-        int pre = a % 10;
-        a /= 10;
-        int f = 0;
-        while (a != 0) {
-            if (a % 10 == pre)
-                f++;
-            if (f == 1)
+        int del = 2;
+        int flag = 0;
+        while (del != a) {
+            if (a % del == 0) {
+                flag = 1;
                 break;
-            pre = a % 10;
-            a /= 10;
+            }
+            del++;
         }
-        if (f == 1)
-            System.out.print("YES");
+        if (flag == 1)
+            System.out.print("composite");
         else
-            System.out.print("NO");
+            System.out.print("prime");
     }
 }
