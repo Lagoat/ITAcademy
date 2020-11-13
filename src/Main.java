@@ -8,7 +8,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
         double x = in.nextDouble();
         double y = in.nextDouble();
-        if ((y != x - 1 && y != 1 && x * x + y * y < 1 && x > 0) || (y < 1 && y > x - 1 && x > 0))
+        if ((x * x + y * y > 1 && x < 1 && y < 1 && x > 0 && y > 0) || (x * x + y * y < 1 && y != 1 && x != 1))
             System.out.print("YES");
         else
             System.out.print("NO");
