@@ -6,11 +6,36 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        double x = in.nextDouble();
-        double y = in.nextDouble();
-        if ((x * x + y * y > 1 && x < 1 && y < 1 && x > 0 && y > 0) || (x * x + y * y < 1 && y != 1 && x != 1))
-            System.out.print("YES");
-        else
-            System.out.print("NO");
+        double A = in.nextDouble();
+        double B = in.nextDouble();
+        DecimalFormat df = new DecimalFormat("###.#");
+        if (A > 0 && B > 0)
+            System.out.print("any x");
+        else if (A == 0 && B > 0)
+            System.out.print("any x");
+        else if (A > 0 && B == 0)
+            System.out.print("any x");
+        else if (A == 0 && B == 0)
+            System.out.print("no such x");
+        else if (A < 0 && B < 0)
+            System.out.print("no such x");
+        else if (A == 0 && B < 0)
+            System.out.print("no such x");
+        else if (A < 0 && B == 0)
+            System.out.print("no such x");
+        else if (A < 0 && B > 0) {
+            double x1 = -B/A;
+            double x2 = -B/(-A);
+            String x1f = String.format("%.1f", x1);
+            String x2f = String.format("%.1f", x2);
+            System.out.printf(x2f + "<x<" + x1f);
+        }
+        else if (A > 0 && B < 0) {
+            double x1 = -B/A;
+            double x2 = -B/(-A);
+            String x1f = String.format("%.1f", x1);
+            String x2f = String.format("%.1f", x2);
+            System.out.printf("x<" + x2f + " or x>" + x1f);
+        }
     }
 }
