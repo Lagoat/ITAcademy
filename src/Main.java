@@ -4,22 +4,27 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Main {
-    public static void t5(int[] a, int n) {
-        double sum = 0;
-        double amnt = 0;
+    public static void t6(int[] a, int n) {
+        int max = 0;
         for (int i = 0; i < n; i++) {
-                 if (a[i] >= 1000 && a[i] <= 9999) {
-                     sum += a[i];
-                     amnt++;
-                 }
-             }
-        if (amnt == 0)
-            System.out.printf("-1.00");
-        else {
-            String ans = String.format("%.2f", (sum / amnt));
-            System.out.printf(ans);
+            if (a[i] > max)
+                max = a[i];
         }
-
+        int min = max + 1;
+        int min_i = -1;
+        for (int i = 0; i < n; i++) {
+            if (a[i] < min) {
+                min = a[i];
+                min_i = i;
+            }
+        }
+        for (int i = min_i; i > 0; i--) {
+            int t = a[i];
+            a[i] = a[i - 1];
+            a[i - 1] = t;
+        }
+        for (int i = 0; i < n; i++)
+            System.out.print(a[i] + " ");
     }
 
     public static void main(String[] args) {
@@ -28,6 +33,6 @@ public class Main {
         int[] a  = new int [n];
         for (int i = 0; i < n; i++)
             a[i] = in.nextInt();
-        t5(a, n);
+        t6(a,n);
     }
 }
