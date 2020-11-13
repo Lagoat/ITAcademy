@@ -4,11 +4,20 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int a = in.nextInt();
-        int sum = 0;
+        int pre = a % 10;
+        a /= 10;
+        int f = 0;
         while (a != 0) {
-            sum += a % 10;
+            if (a % 10 == pre)
+                f++;
+            if (f == 1)
+                break;
+            pre = a % 10;
             a /= 10;
         }
-        System.out.print(sum);
+        if (f == 1)
+            System.out.print("YES");
+        else
+            System.out.print("NO");
     }
 }
