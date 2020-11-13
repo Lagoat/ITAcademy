@@ -4,18 +4,25 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
+        int check = 0;
         int[][] a = new int[n][n];
+        int[][] b = new int[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if (j == n - i - 1)
-                    a[i][j] = 1;
-                else if (i < n - j - 1 && j < n - i - 1)
-                    a[i][j] = 0;
-                else
-                    a[i][j] = 2;
-                System.out.print(a[i][j] + " ");
+                a[i][j] = in.nextInt();
             }
-            System.out.println("");
         }
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                b[i][j] = a[j][i];
+                if (b[i][j] == a[i][j])
+                    check++;
+            }
+        }
+
+        if (check == n*n)
+            System.out.print("yes");
+        else
+            System.out.print("no");
     }
 }
