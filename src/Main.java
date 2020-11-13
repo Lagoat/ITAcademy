@@ -3,19 +3,24 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int a = in.nextInt();
-        int del = 2;
-        int flag = 0;
-        while (del != a) {
-            if (a % del == 0) {
-                flag = 1;
-                break;
+        double a = in.nextDouble();
+        double a1 = 1;
+        long n = in.nextLong();
+        long i = 0;
+        if (n % 2 == 0) {
+            while (i != n/2) {
+                a1 *= a;
+                i++;
             }
-            del++;
+            System.out.print(a1 * a1);
         }
-        if (flag == 1)
-            System.out.print("composite");
-        else
-            System.out.print("prime");
+        else {
+            while (i != n - 1) {
+                a1 *= a;
+                i++;
+            }
+            System.out.print(a * a1);
+        }
+
     }
 }
