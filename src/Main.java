@@ -7,7 +7,7 @@ public class Main {
         int[] a = new int[n];
         for (int i = 0; i < n; i++) {
             a[i] = in.nextInt();
-            if (i % 2 == 0)
+            if (a[i] % 2 == 0)
                 System.out.print(a[i] + " ");
         }
     }
