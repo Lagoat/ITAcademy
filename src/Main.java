@@ -8,8 +8,9 @@ public class Main {
         int amnt = 0;
         for (int i = 0; i < n; i++) {
             a[i] = in.nextInt();
-            if (a[i] > 0)
-                amnt++;
+            if (i > 0)
+                if (a[i] > a[i - 1])
+                    amnt++;
         }
         System.out.print(amnt);
     }
