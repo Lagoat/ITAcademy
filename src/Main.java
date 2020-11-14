@@ -5,10 +5,12 @@ public class Main {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         int[] a = new int[n];
+        int amnt = 0;
         for (int i = 0; i < n; i++) {
             a[i] = in.nextInt();
-            if (a[i] % 2 == 0)
-                System.out.print(a[i] + " ");
+            if (a[i] > 0)
+                amnt++;
         }
+        System.out.print(amnt);
     }
 }
